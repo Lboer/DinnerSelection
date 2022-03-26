@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using SQLite;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using SQLite;
 
-namespace DinnerSelection.Database
+namespace DinnerSelection
 {
-    class Database
+    public class Database
     {
         private readonly SQLiteAsyncConnection _database;
 

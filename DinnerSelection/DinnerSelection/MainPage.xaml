@@ -23,6 +23,14 @@
                     <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                         <Label Text="Add a dish!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                     </Frame>
+                    <StackLayout Margin="30">
+                        <Entry x:Name="nameEntry" Placeholder="Type the name of the dish" />
+                        <Picker x:Name="basePicker" SelectedIndex="1" />
+                        <Picker x:Name="typePicker" SelectedIndex="1" />
+                        <Picker x:Name="seasonPicker" SelectedIndex="1" />
+                        <Entry x:Name="scoreEntry" Placeholder="Type the score of the dish" Keyboard="Numeric" />
+                        <Button Text="Add to database" Clicked="Button_Clicked" />
+                    </StackLayout>
                 </StackLayout>
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
@@ -34,6 +42,23 @@
                     <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                         <Label Text="Browse Dishes!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                     </Frame>
+                    <CollectionView x:Name="collectionView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" Margin="30,20,30,0">
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                        <Label Text="{Binding Score}" FontAttributes="Bold" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="End" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Margin="30,0">
+                                        <Label Text="{Binding Base}" />
+                                        <Label Text="{Binding Type}" />
+                                        <Label Text="{Binding Season}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </StackLayout>
             </xct:TabViewItem.Content>
         </xct:TabViewItem>

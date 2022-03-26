@@ -21,8 +21,8 @@ The following functionalities will be added:
 | Functionality  | Added? | Date  |
 | -------------- |:------:| -----:|
 | Tabbed view    | Yes    | 26/03 |
-| Database       |        |       |
-| Add Dish       |        |       |
+| Database       | Yes    | 26/03 |
+| Add Dish       | Yes    | 26/03 |
 | Remove Dish    |        |       |
 | Random Select  |        |       |
 | Weighed Select |        |       |
