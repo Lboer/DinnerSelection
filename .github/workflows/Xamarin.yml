@@ -10,4 +10,5 @@ jobs:
     - name: Android
       run: |
         nuget restore
+        cd ..
         msbuild DinnerSelection.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
