@@ -6,6 +6,7 @@ namespace DinnerSelection
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();

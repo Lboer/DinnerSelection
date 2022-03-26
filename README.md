@@ -13,3 +13,17 @@ The project will have the following functionalities:
 (1) Filters will apply on these aspects
 
 The project will also use CI to automatically test if the project is building.
+
+# Roadmap
+
+The following functionalities will be added:
+
+| Functionality  | Added? | Date  |
+| -------------- |:------:| -----:|
+| Tabbed view    | Yes    | 26/03 |
+| Database       |        |       |
+| Add Dish       |        |       |
+| Remove Dish    |        |       |
+| Random Select  |        |       |
+| Weighed Select |        |       |
+| CI             |        |       |
