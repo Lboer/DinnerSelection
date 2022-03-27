@@ -1,3 +1,5 @@
+[![Android Build](https://github.com/Lboer/DinnerSelection/actions/workflows/Xamarin.yml/badge.svg)](https://github.com/Lboer/DinnerSelection/actions/workflows/Xamarin.yml)
+
 # DinnerSelection
 
 This project consists of an Android Application that can help people select a dish for dinner when they are indicisive.
@@ -26,4 +28,4 @@ The following functionalities will be added:
 | Remove Dish    |        |       |
 | Random Select  |        |       |
 | Weighed Select |        |       |
-| CI             |        |       |
+| CI             | Yes    | 27/03 |
