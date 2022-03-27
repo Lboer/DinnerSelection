@@ -1,4 +1,4 @@
-name: Xamarin CI
+name: Android Build
 
 on: [push, pull_request]
 
