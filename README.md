@@ -26,6 +26,6 @@ The following functionalities will be added:
 | Database       | Yes    | 26/03 |
 | Add Dish       | Yes    | 26/03 |
 | Remove Dish    |        |       |
-| Random Select  |        |       |
+| Random Select  | Yes    | 27/03 |
 | Weighed Select |        |       |
 | CI             | Yes    | 27/03 |

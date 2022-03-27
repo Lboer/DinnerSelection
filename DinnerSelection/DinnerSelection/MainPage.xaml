@@ -12,6 +12,18 @@
                     <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                         <Label Text="Select a dish!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                     </Frame>
+                    <StackLayout Margin="30">
+                        <Button Text="Select random dish" Clicked="Random_Button_Clicked" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="30,20,30,0">
+                        <Label x:Name="SelectName" FontAttributes="Bold" />
+                        <Label x:Name="SelectScore" FontAttributes="Bold" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="End" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="30,0">
+                        <Label x:Name="SelectBase" />
+                        <Label x:Name="SelectType" />
+                        <Label x:Name="SelectSeason" />
+                    </StackLayout>
                 </StackLayout>
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
@@ -29,7 +41,7 @@
                         <Picker x:Name="typePicker" SelectedIndex="1" />
                         <Picker x:Name="seasonPicker" SelectedIndex="1" />
                         <Entry x:Name="scoreEntry" Placeholder="Type the score of the dish" Keyboard="Numeric" />
-                        <Button Text="Add to database" Clicked="Button_Clicked" />
+                        <Button Text="Add to database" Clicked="Add_Button_Clicked" />
                     </StackLayout>
                 </StackLayout>
             </xct:TabViewItem.Content>

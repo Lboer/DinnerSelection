@@ -52,9 +52,9 @@ namespace DinnerSelection
             collectionView.ItemsSource = await App.Database.GetDishesAsync();
         }
 
-        async void Button_Clicked(object sender, EventArgs e)
+        async void Add_Button_Clicked(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(scoreEntry.Text) /* Add pickers and other stuff*/)
+            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(scoreEntry.Text) /* Add pickers and other stuff*/)
             {
                 // Add to database
                 await App.Database.SaveDishAsync(new Dish
@@ -75,6 +75,21 @@ namespace DinnerSelection
 
                 // Update browseable dishes
                 collectionView.ItemsSource = await App.Database.GetDishesAsync();
+            }
+        }
+
+        private async void Random_Button_Clicked(object sender, EventArgs e)
+        {
+            var items = await App.Database.GetDishesAsync();
+            if(items.Count > 0)
+            {
+                Random rnd = new Random();
+                int randomSelect = rnd.Next(items.Count);
+                SelectName.Text = items[randomSelect].Name;
+                SelectScore.Text = items[randomSelect].Score.ToString();
+                SelectBase.Text = items[randomSelect].Base;
+                SelectType.Text = items[randomSelect].Type;
+                SelectSeason.Text = items[randomSelect].Season;
             }
         }
     }
