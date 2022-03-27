@@ -5,11 +5,12 @@ on: [push, pull_request]
 jobs: 
   Android:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./DinnerSelection
     steps:
     - uses: actions/checkout@v1
     - name: Android
       run: |
         nuget restore
-        cd ..
-        cd ..
-        msbuild DinnerSelection.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+        msbuild DinnerSelection.Android/DinnerSelection.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
