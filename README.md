@@ -20,12 +20,13 @@ The project will also use CI to automatically test if the project is building.
 
 The following functionalities will be added:
 
-| Functionality  | Added? | Date  |
-| -------------- |:------:| -----:|
-| Tabbed view    | Yes    | 26/03 |
-| Database       | Yes    | 26/03 |
-| Add Dish       | Yes    | 26/03 |
-| Remove Dish    |        |       |
-| Random Select  | Yes    | 27/03 |
-| Weighed Select |        |       |
-| CI             | Yes    | 27/03 |
+| Functionality   | Added? | Date  |
+| --------------- |:------:| -----:|
+| Tabbed view     | Yes    | 26/03 |
+| Database        | Yes    | 26/03 |
+| Add Dish        | Yes    | 26/03 |
+| Remove Dish     | Yes    | 28/03 |
+| Random Select   | Yes    | 27/03 |
+| Weighed Select  |        |       |
+| Filtered Select |        |       |
+| CI              | Yes    | 27/03 |

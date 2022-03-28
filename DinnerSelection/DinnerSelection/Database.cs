@@ -24,9 +24,13 @@ namespace DinnerSelection
             return _database.InsertAsync(dish);
         }
 
-        public Task DeleteDishAsync(int id)
+        public async Task DeleteDishAsync(int id)
         {
-            return _database.DeleteAsync(id);
+            var collectionItem = await _database.Table<Dish>().Where(x => x.Id == id).ToListAsync();
+            foreach (Dish item in collectionItem)
+            {
+                await _database.DeleteAsync(item);
+            }
         }
     }
 }

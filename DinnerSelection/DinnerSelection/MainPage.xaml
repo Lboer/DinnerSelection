@@ -54,15 +54,15 @@
                     <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                         <Label Text="Browse Dishes!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                     </Frame>
-                    <CollectionView x:Name="collectionView">
+                    <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
-                                    <StackLayout Orientation="Horizontal" Margin="30,20,30,0">
+                                    <StackLayout Orientation="Horizontal" Margin="30,10">
                                         <Label Text="{Binding Name}" FontAttributes="Bold" />
                                         <Label Text="{Binding Score}" FontAttributes="Bold" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="End" />
                                     </StackLayout>
-                                    <StackLayout Orientation="Vertical" Margin="30,0">
+                                    <StackLayout Orientation="Vertical" Margin="30,10">
                                         <Label Text="{Binding Base}" />
                                         <Label Text="{Binding Type}" />
                                         <Label Text="{Binding Season}" />
@@ -71,6 +71,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    <Button Margin="30,10" Text="Delete Dish" Clicked="Delete_Button_Clicked" VerticalOptions="EndAndExpand" />
                 </StackLayout>
             </xct:TabViewItem.Content>
         </xct:TabViewItem>

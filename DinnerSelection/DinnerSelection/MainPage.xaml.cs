@@ -1,47 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DinnerSelection
 {
     public partial class MainPage : ContentPage
     {
+        public int selectedBrowseIndex;
         public MainPage()
         {
             InitializeComponent();
 
-            var baseList = new List<string>();
-            baseList.Add("Rice");
-            baseList.Add("Potatoes");
-            baseList.Add("Pasta/Noodles");
-            baseList.Add("Salad");
-            baseList.Add("Other");
+            var baseList = new List<string>
+            {
+                "Rice",
+                "Potatoes",
+                "Pasta/Noodles",
+                "Salad",
+                "Other"
+            };
             basePicker.ItemsSource = baseList;
             basePicker.SelectedIndex = 0;
-            
 
-            var typeList = new List<string>();
-            typeList.Add("Pork");
-            typeList.Add("Poultry");
-            typeList.Add("Beef");
-            typeList.Add("Fish");
-            typeList.Add("Shellfish");
-            typeList.Add("Vegetarian");
-            typeList.Add("Vegan");
-            typeList.Add("Other");
+
+            var typeList = new List<string>
+            {
+                "Pork",
+                "Poultry",
+                "Beef",
+                "Fish",
+                "Shellfish",
+                "Vegetarian",
+                "Vegan",
+                "Other"
+            };
             typePicker.ItemsSource = typeList;
             typePicker.SelectedIndex = 0;
 
-            var seasonList = new List<string>();
-            seasonList.Add("Summer");
-            seasonList.Add("Spring");
-            seasonList.Add("Autumn");
-            seasonList.Add("Winter");
-            seasonList.Add("Entire year");
+            var seasonList = new List<string>
+            {
+                "Summer",
+                "Spring",
+                "Autumn",
+                "Winter",
+                "Entire year"
+            };
             seasonPicker.ItemsSource = seasonList;
             seasonPicker.SelectedIndex = 0;
         }
@@ -74,7 +78,7 @@ namespace DinnerSelection
                 seasonPicker.SelectedIndex = 0;
 
                 // Update browseable dishes
-                collectionView.ItemsSource = await App.Database.GetDishesAsync();
+                UpdateFromDatabase();
             }
         }
 
@@ -91,6 +95,22 @@ namespace DinnerSelection
                 SelectType.Text = items[randomSelect].Type;
                 SelectSeason.Text = items[randomSelect].Season;
             }
+        }
+
+        private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedBrowseIndex = (int)(e.CurrentSelection.FirstOrDefault() as Dish)?.Id;
+        }
+
+        private async void UpdateFromDatabase()
+        {
+            collectionView.ItemsSource = await App.Database.GetDishesAsync();
+        }
+
+        private async void Delete_Button_Clicked(object sender, EventArgs e)
+        {
+            await App.Database.DeleteDishAsync(selectedBrowseIndex);
+            UpdateFromDatabase();
         }
     }
 }
