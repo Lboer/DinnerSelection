@@ -14,7 +14,9 @@
                     </Frame>
                     <StackLayout Margin="30">
                         <Button Text="Select random dish" Clicked="Random_Button_Clicked" />
+                        <Button Text="Select weighted random dish" Clicked="Weighted_Random_Button_Clicked" />
                     </StackLayout>
+                    <!--Showing the randomly selected item-->
                     <StackLayout Orientation="Horizontal" Margin="30,20,30,0">
                         <Label x:Name="SelectName" FontAttributes="Bold" />
                         <Label x:Name="SelectScore" FontAttributes="Bold" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="End" />
@@ -23,6 +25,17 @@
                         <Label x:Name="SelectBase" />
                         <Label x:Name="SelectType" />
                         <Label x:Name="SelectSeason" />
+                    </StackLayout>
+                    
+                    <!--- Filters -->
+                    <StackLayout Margin="30">
+                        <Button FontAttributes="Bold" FontSize="20" Text="Filters" Clicked="Toggle_Filter_Button_Clicked"/>
+                        <StackLayout Margin="20,0">
+                            <Picker x:Name="baseFilter" SelectedIndex="1" IsVisible="False"/>
+                            <Picker x:Name="typeFilter" SelectedIndex="1" IsVisible="False"/>
+                            <Picker x:Name="seasonFilter" SelectedIndex="1" IsVisible="False"/>
+                            <Entry x:Name="scoreFilter" Placeholder="Type the minimum score of the dish" Keyboard="Numeric" IsVisible="False"/>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
             </xct:TabViewItem.Content>
@@ -41,7 +54,7 @@
                         <Picker x:Name="typePicker" SelectedIndex="1" />
                         <Picker x:Name="seasonPicker" SelectedIndex="1" />
                         <Entry x:Name="scoreEntry" Placeholder="Type the score of the dish" Keyboard="Numeric" />
-                        <Button Text="Add to database" Clicked="Add_Button_Clicked" />
+                        <Button Text="Add to database" Clicked="Add_Button_Clicked" Margin="30" Padding="20" />
                     </StackLayout>
                 </StackLayout>
             </xct:TabViewItem.Content>

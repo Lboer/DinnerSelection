@@ -2,7 +2,7 @@
 
 # DinnerSelection
 
-This project consists of an Android Application that can help people select a dish for dinner when they are indicisive.
+This project consists of an Android Application that can help people select a dish for dinner when they are indicisive of what dish to eat.
 
 # Functionality
 
@@ -22,11 +22,11 @@ The following functionalities will be added:
 
 | Functionality   | Added? | Date  |
 | --------------- |:------:| -----:|
-| Tabbed view     | Yes    | 26/03 |
-| Database        | Yes    | 26/03 |
-| Add Dish        | Yes    | 26/03 |
-| Remove Dish     | Yes    | 28/03 |
-| Random Select   | Yes    | 27/03 |
-| Weighed Select  |        |       |
-| Filtered Select |        |       |
-| CI              | Yes    | 27/03 |
+| Tabbed view     | - [x]  | 26/03 |
+| Database        | - [x]  | 26/03 |
+| Add Dish        | - [x]  | 26/03 |
+| Remove Dish     | - [x]  | 28/03 |
+| Random Select   | - [x]  | 27/03 |
+| Weighed Select  | - [x]  | 02/07 |
+| Filtered Select | - [x]  | 02/07 |
+| CI              | - [x]  | 27/03 |
